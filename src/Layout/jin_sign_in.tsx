@@ -12,6 +12,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 
 import Image from "../Components/image";
 import "../Styles/jinSignIn.css";
+import LoginBtn from "../Components/LoginBtn";
 
 const JinSignIn = () => {
   const [mailId, setMailId] = useState("");
@@ -225,6 +226,7 @@ const JinSignIn = () => {
                   />
                 </svg>
               </button>
+              <LoginBtn />
             </div>
             <p className="text-end mt-2">
               Don't have an account? <Link to="/register">Register</Link>
