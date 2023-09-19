@@ -8,8 +8,8 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <Auth0Provider
-      domain="dev-5tf99p7c.us.auth0.com"
-      clientId="GBPB42qhMWCtvrwGmYxvm5cbHXU68nzG"
+      domain="dev-cyihn2rsss0wi5rc.us.auth0.com"
+      clientId="16BHD1rD7TaMnQ1vj2QtrVhHxDUHFwRz"
       redirectUri={window.location.origin + '/react-auth0/profile'}
     >
       <App />
