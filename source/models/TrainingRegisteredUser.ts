@@ -23,7 +23,7 @@ TrainingRegisteredUser.init(
     Lastname: {
       type: DataTypes.STRING
     },
-    trainingTitle: {
+    trainingId: {
       type: DataTypes.STRING
     },
     MobileNumber: {

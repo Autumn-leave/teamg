@@ -170,5 +170,39 @@ private static async emailVerificationLink(token: any, hashUser: any){
       res.status(500).json({ error: 'An error occurred' });
     }
   }
+
+  //ssologinuser
+  public async ssologinUser(req: Request, res: Response) {
+    const {email} = req.body
+    try {      
+       var loginData = {
+    Employee_Email: email
+    }
+      console.log(loginData);
+      const userExist = await User.findOne({where: {Employee_Email: loginData.Employee_Email}})
+      console.log(userExist?.dataValues);
+      if(userExist){
+        if(userExist.dataValues.is_activated){
+         
+              // const token = await jwt.sign({userExist}, 'naren', { expiresIn: '1h' })
+              const token = await UserController.createJwtToken(userExist)
+              if(userExist.dataValues.is_admin){
+                res.status(200).json({ message: "Login-admin", data: userExist, token })
+              }else{
+                res.status(200).json({ message: "Login", data: userExist, token })
+              }
+            
+       
+        }else{
+          res.status(200).json({ message: "Activation Required" })
+        }
+      }else{
+        res.status(200).json({ message: "User Not Found" })
+      }
+    } catch (error) {
+      res.status(500).json({ error: 'An error occurred' });
+    }
+  }
+
 }
 export const userController = new UserController();

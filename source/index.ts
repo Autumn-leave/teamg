@@ -53,7 +53,7 @@ database.authenticate()
   // synchronizing database
 
 
-  database.sync().then(() => {
+  database.sync({force: false}).then(() => {
     console.log('Database synchronized successfully.');
   })
   .catch((error:any) => {

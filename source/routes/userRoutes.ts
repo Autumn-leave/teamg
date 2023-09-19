@@ -6,6 +6,7 @@ const router = new Router();
 
 router.post('/register', userController.registerUser)
 router.post('/login', userController.loginUser)
+router.post('/loginwithsso', userController.ssologinUser)
 router.get('/verify', userController.verify)
 
 

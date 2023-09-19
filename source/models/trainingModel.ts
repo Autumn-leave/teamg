@@ -15,9 +15,12 @@ class trainingModel extends Model {
 
 trainingModel.init(
   {
-    trainingTitle: {
+    trainingId: {
       type: DataTypes.STRING,
       primaryKey:true
+    },
+    trainingTitle: {
+      type: DataTypes.STRING
     },
     skillTitle: {
       type: DataTypes.STRING
